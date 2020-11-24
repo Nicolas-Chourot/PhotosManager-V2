@@ -9,12 +9,15 @@ include_once "utilities/dateFormat.php";
 
 if (isset($_GET["id"])){
     $id = $_GET["id"];
+    $photo = TablePhotos()->get($id);
+    if ($photo["UserId"] != $_SESSION["loggedUser"]["Id"] && $photo["Shared"] == 0)
+            illegalAccessRedirection();
    
     $editPhotoCmd = "";
     $deletePhotoCmd = "";
     $addPhotoCmd = html_flashButtonLink('iconPlus','addPhoto.php', 'Ajouter une photo','right');
     $backCmd = html_flashButtonLink('iconLeft','listPhotos.php', 'Retour...','right');
-    $photo = TablePhotos()->get($id);
+
     $title = $photo["Title"];
     if ($photo["UserId"] == $_SESSION["loggedUser"]["Id"] || $_SESSION["loggedUser"]["Admin"] == 1) {
         $editPhotoCmd = html_flashButtonLink('iconEdit','editPhoto.php?id='.$id, 'Modifer...','right');
