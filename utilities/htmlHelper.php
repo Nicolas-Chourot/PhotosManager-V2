@@ -172,4 +172,5 @@ function html_makeRatingSummary($name, $value, $nbRatings){
     $html.= "<span class='ratingSummary'>($nbRatings)</span>";
     return $html;
 }
+
 ?>

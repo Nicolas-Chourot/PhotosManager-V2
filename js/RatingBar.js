@@ -12,6 +12,7 @@
  * Visit the plugin page for more information.
  * http://irfandurmus.com/projects/jquery-star-rating-plugin/
  *
+ *
  */
 
 (function ($) {
