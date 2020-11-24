@@ -45,8 +45,7 @@ if (isset($_GET["id"])){
             <h5>$keyword</h5>
             <hr>
             <h4>Créateur:</h4>
-            <h5>$avatarImage $ownerName</h5>
-            <br>
+            <table><tr><td>$avatarImage</td><td><h5>$ownerName</h5></td></tr></table>
             <hr>
             <h4>Date de création:</h4>
             <h5>$creationDate</h5>

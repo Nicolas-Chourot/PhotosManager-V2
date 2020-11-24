@@ -133,7 +133,7 @@ function html_faviconLinkFromUrl($url){
  function html_fittedImage($url, $class=''){
     return <<<HTML
     <div    class='$class' 
-            style='background:url($url) no-repeat center;  background-size: cover; float:left; margin-right:5px;'>
+            style='background:url($url) no-repeat center;  background-size: cover; margin-right:5px;'>
             </div>
     HTML;
  }
