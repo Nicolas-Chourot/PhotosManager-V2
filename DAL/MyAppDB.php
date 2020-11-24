@@ -1,5 +1,5 @@
 <?php
     function DB() {
-        return MySQLDataBase::getInstance('PM_DB_V1');
+        return MySQLDataBase::getInstance('pmdbv2');
     }
 ?>
