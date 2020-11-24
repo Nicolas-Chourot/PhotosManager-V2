@@ -158,14 +158,21 @@ div2{
 }
 select, option{
     padding:3px !important;
+    width: 95% !important;
 }
 input[type="search"]{
     padding-left:3px !important;
+    width: 95% !important;
+}
+
+input[type="checkbox"]{
+    height: 20px !important;
+    width: 20px !important;
 }
 
 .searchBarContainer {
     display: grid; 
-    grid-template-columns: 15% 25% 50%;
+    grid-template-columns: 40px 190px 165px 155px;
 }
 .searchBarItem {
     font-size:20px;

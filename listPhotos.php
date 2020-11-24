@@ -40,7 +40,7 @@
         return $html;
     }
     function MakeKeywords($keywords) {
-        $html = "<input type='search' name='keywords' onchange='this.form.submit()' value='$keywords' placeholder='recherche par mots-clés'/>"; 
+        $html = "<input type='search' name='keywords' onchange='this.form.submit()' value='$keywords' placeholder='Mots-clés...'/>"; 
         return $html;
     }
     function containsKeywords($keywords, $text){
