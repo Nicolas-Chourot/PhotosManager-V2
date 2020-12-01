@@ -149,28 +149,9 @@ function html_flashButton($flashButtonType, $id, $tooltip, $position = 'top'){
     $html .= '</div>';
     return $html;
 }
-/* depricated: not working correctly with quote and double quotes within title
-function html_Confirm($title, $message, $link) {
-    $html = <<<HTML
-    <div class='flashButton iconDelete' 
-         tooltip='Effacer' 
-         tooltip-position='bottom'
-         onclick='$.confirm({title:"$title",content:"$message",buttons:{confirmer:function(){document.location="$link";},annuler:{}}});'>
-    </div>
-    HTML;
-    return $html;
-}
-*/
 function html_makeRating($name, $value, $readOnly = true){
     $disableAttribute = $readOnly?"disabled":"";
     $html = "<input type='radio' name='$name' class='RatingBar' value='$value' $disableAttribute/>";
     return $html;
 }
-
-function html_makeRatingSummary($name, $value, $nbRatings){
-    $html = html_makeRating($name, $value);
-    $html.= "<span class='ratingSummary'>($nbRatings)</span>";
-    return $html;
-}
-
 ?>

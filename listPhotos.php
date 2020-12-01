@@ -16,11 +16,13 @@
         $id = $photo["Id"];
         $thumbnail = html_fittedImage($url, "thumbnail");
         $html = <<< HTML
-        <div class='thumbnailContainer' onclick='window.location="photoDetails.php?id=$id"'>
+        <div class='thumbnailContainer'>
             <div class='thumbnailHeader ellipsis'>
                 $title
-                </div>
+            </div>
+            <div onclick='window.location="photoDetails.php?id=$id"'>
                 $thumbnail
+            </div>
             </div>
         HTML;
         return $html;
