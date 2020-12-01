@@ -56,18 +56,22 @@
         return true;
     }
     
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    /// Consruction de la barre de recherche
     $viewTitle = "Liste des photos";
     $addPhotoCmd = html_flashButtonLink('iconPlus','addPhoto.php', 'Ajouter une photo','right');
     $searchUser = "<div class='searchBarItem'>".listUser($_SESSION["selectedUserId"])."</div>";
     $searchKeywords = "<div class='searchBarItem'>".MakeKeywords($_SESSION["keywords"])."</div>";
 
+    // Cette variable est utilisée dans header.php
     $searchBar = "<form class='searchBarContainer'>"
                     .$addPhotoCmd
                     .$searchUser
                     .$searchKeywords.
                 "</form>";
-
-    $viewContent = "<div class='thumbnailListContainer'>";
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    /// filter les photos
+   
     $userFilter = "";
 
     if ($_SESSION["loggedUser"]["Admin"]) {
@@ -84,8 +88,10 @@
         }
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    /// Bouble d'affichage des photos
     $photos = TablePhotos()->selectAll($userFilter);
-   
+    $viewContent = "<div class='thumbnailListContainer'>";
     foreach($photos as $photo) {
         if ($_SESSION["keywords"] == "") {
             $viewContent.= thumbNail($photo);
@@ -97,6 +103,5 @@
         }
     }
     $viewContent.= "</div>";
-    $viewScript = "js/listPhotos.js";
     include "view/master.php";
 ?>
