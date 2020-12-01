@@ -9,8 +9,9 @@ include_once "utilities/dateFormat.php";
 if (isset($_GET["id"])){
     $id = $_GET["id"];
     $photo = TablePhotos()->get($id);
-    if ($photo["UserId"] != $_SESSION["loggedUser"]["Id"] && $photo["Shared"] == 0)
-            illegalAccessRedirection();
+    if (!$_SESSION["loggedUser"]["Admin"])
+        if ($photo["UserId"] != $_SESSION["loggedUser"]["Id"] && $photo["Shared"] == 0)
+                illegalAccessRedirection();
    
     $editPhotoCmd = "";
     $deletePhotoCmd = "";
