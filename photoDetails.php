@@ -6,7 +6,6 @@ include_once "accessCheck.php";
 include_once "utilities/htmlHelper.php";
 include_once "utilities/dateFormat.php";
 
-
 if (isset($_GET["id"])){
     $id = $_GET["id"];
     $photo = TablePhotos()->get($id);
@@ -63,6 +62,4 @@ if (isset($_GET["id"])){
 } else {
     illegalAccessRedirection();
 }
-
-
 ?>
